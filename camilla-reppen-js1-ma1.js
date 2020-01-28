@@ -60,7 +60,7 @@ const cats = [
 
 
 function printCatArray(catArray) { 
-   for (let i = 0; i < cats.length; i++) {
+   for (let i = 0; i < catArray.length; i++) {
    console.log(cats[i].name);
     }
 }
@@ -79,8 +79,8 @@ printCatArray(cats);
 //<h5>Blurt</h5>
 
 function printCatArray(catArray) {
-    for (let i = 0; i < cats.length; i++) {
-        console.log(`<h5>${cats[i].name}</h5>`);
+    for (let i = 0; i < catArray.length; i++) {
+        console.log(`<h5>${catArray[i].name}</h5>`);
     }
 }
 printCatArray(cats);
@@ -90,8 +90,8 @@ printCatArray(cats);
 //pass it the cats variable from question 7 
 //and set the inner HTML of the resultsContainer variable from question 6 to the return value of the function.
 
-function printCatArray() {
-    for (let i = 0; i < cats.length; i++) {
+function printCatArray(catArray) {
+    for (let i = 0; i < catArray.length; i++) {
         resultsContainer.innerHTML += `<h5>${cats[i].name}</h5>`;
     }
 }
@@ -100,8 +100,8 @@ function printCatArray() {
 //If the age property is missing, it should display Age unknown instead.
 
 //Wrap the h5 and p in a div.
-
-/*<div>
+/*
+<div>
 <h5>Blob</h5>
 <p>10</p>
 </div>
@@ -114,7 +114,9 @@ function printCatArray() {
 <p>21</p>
 </div> */
 
-for (let i = 0; i < cats.length; i++) {
+
+function printCatArray(catArray) {
+for (let i = 0; i < catArray.length; i++) {
 
     let ageValue = "Age unknow";
 
@@ -129,4 +131,52 @@ for (let i = 0; i < cats.length; i++) {
                         <p>${cats[i].age}</p>
                         </div>`
                         resultsContainer.innerHTML += details;
+                       
+    }}
+/*
+    THIS IS FROM GUIDENS!!!
+    
+   const resultsContainer = document.querySelector(".results");
+
+   const cats = [
+    {
+        name: "Blob",
+        age: 10
+    },
+    {
+        name: "Harold",
+    },
+    {
+        name: "Blurt",
+        age: 21
     }
+];
+
+  
+    
+ 
+ function printCatArray(catArray) {
+     let pageContent = "";
+
+     let catAge;
+
+     for (let i = 0; i < catArray.length; i++) {
+
+        if (catArray[i].age) {
+            catAge = catArray[i].age;
+        } else {
+            catAge = "Age Unknown";
+        }
+
+
+        pageContent += ` <div class="cats">
+                <h5>${catArray[i].name}</h5>
+                <p>${catAge}</p>
+            </div>
+            `
+     }
+     return pageContent;
+     }
+
+     resultsContainer.innerHTML = printCatArray(cats);
+     */
